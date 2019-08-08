@@ -1,3 +1,5 @@
+Sergio Test 4:23
+
 ### Tipbot for Discord that works with Stratis
 
 The bot is added to the [stratis community discord](https://discord.gg/9tDyfZs). You can check it out there.
