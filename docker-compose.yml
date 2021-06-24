@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    fullnode:
+     network_mode: host
+     build:
+      context: .
+      args:
+       - gitUrl
+       - fullnodeContainerDir   
+       - configFile
+       - repoTag
+     environment:
+       - eTicker=${ticker}
+     volumes:
+       - ./chain.conf:${fullnodeContainerDir}/${configFile}
+       - ${fullnodeHostDir}:${fullnodeContainerDir}
+     restart: "always"
+     logging:
+      driver: "json-file"
+      options:
+          max-file: "5"
+          max-size: "10m"
